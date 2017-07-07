@@ -63,5 +63,5 @@ CREATE TABLE `run_manage_user` (
 
 /*Data for the table `run_manage_user` */
 
-insert  into `run_manage_user`(`admin_id`,`admin_name`,`realname`,`salt`,`type`,`mobile`,`password`,`group_id`,`group_name`,`operate_id`,`operate_name`,`created`,`status`,`operation_time`,`lock_reason`,`lock_time`,`unlock_time`) values (1,'admin','run222','vlgr',3,'18201197923','4ae38e51cef30061c496e9ebd74717bb',13,'财务后台_财务',1,'admin',1489630596,1,0,NULL,NULL,NULL),(6,'wsq','jimmy','fpjc',0,'15000000011','09da0d8e6c69a00b81ab156cc66b3a8b',0,'',0,'',1499394940,1,0,NULL,NULL,NULL);
+insert  into `run_manage_user`(`admin_id`,`admin_name`,`realname`,`salt`,`type`,`mobile`,`password`,`group_id`,`group_name`,`operate_id`,`operate_name`,`created`,`status`,`operation_time`,`lock_reason`,`lock_time`,`unlock_time`) values (1,'admin','run222','vlgr',3,'18201197922','4ae38e51cef30061c496e9ebd74717bb',13,'财务后台_财务',1,'admin',1489630596,1,0,NULL,NULL,NULL),(6,'wsq','jimmy','fpjc',0,'15000000011','09da0d8e6c69a00b81ab156cc66b3a8b',0,'',0,'',1499394940,1,0,NULL,NULL,NULL);
 
