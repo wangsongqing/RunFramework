@@ -57,6 +57,9 @@ abstract class Model extends Object
 		{
 			RunException::throwException("key: $key 对应的数据表不存在!");
 		}
+		/*if ( $slice > 0) { //此处是为数据库集群设计的，当你的数据量小时就不需要关心这块，当你的数据量大的时候可以关注一下，到时候可以邮箱和我探讨
+		    $databaseId	  =  $slice%200;
+		}*/
 		$this->db->configFile = $tbl[$key]['configFile'];
 		$this->table = $tbl[$key]['name'];
 		return $this->table;
