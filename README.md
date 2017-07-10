@@ -1,7 +1,7 @@
 #RunFramework
 自己整理的一款框架，支持千万级别数据扩展，为千万级别数据而生。
 
-框架运行需求
+#框架运行需求
 在apache配置虚拟主机
 在httpd-vhost.conf里面添加
 <VirtualHost 127.0.0.1:80>
