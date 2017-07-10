@@ -15,11 +15,11 @@
 127.0.0.1       www.run.com
 
 
-需要openssl扩展
-需要pdo扩展
-需要memcahce扩展,并且安装memcache在你的服务器
-需要在php.ini文件里面把 short_open_tag 设置成On
-如果可以最好把redis也安装上去，框架会有涉及redis的东西
+ **需要openssl扩展** 
+ **需要pdo扩展** 
+ **需要memcahce扩展,并且安装memcache在你的服务器** 
+ **需要在php.ini文件里面把 short_open_tag 设置成On** 
+ **如果可以最好把redis也安装上去，框架会有涉及redis的东西**
 
 记得要在Config里面 apppath.config.php 添加常量
 define('PROJECT_NAME','admin'); //项目名称
