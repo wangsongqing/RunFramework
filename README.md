@@ -6,10 +6,15 @@
 在httpd-vhost.conf里面添加
 
 <VirtualHost 127.0.0.1:80>
+
 	#项目位置
+
     DocumentRoot "C:/wamp/www/run/admin"
+
     ServerName www.run.com
+
     DirectoryIndex index.php index.html 
+
 </VirtualHost>
 
 在hosts里面添加（host文件位置：C:\Windows\System32\drivers\etc\hosts）
