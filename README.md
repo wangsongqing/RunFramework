@@ -18,7 +18,6 @@
 </VirtualHost>
 
 在hosts里面添加（host文件位置：C:\Windows\System32\drivers\etc\hosts）
-
 127.0.0.1       www.run.com
 
 
