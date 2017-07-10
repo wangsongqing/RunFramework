@@ -7,11 +7,8 @@
 
 <VirtualHost 127.0.0.1:80>
 	#项目位置
-
     DocumentRoot "C:/wamp/www/run/admin"
-
     ServerName www.run.com
-
     DirectoryIndex index.php index.html 
 </VirtualHost>
 
