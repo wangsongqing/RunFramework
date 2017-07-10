@@ -4,28 +4,36 @@
 #框架运行需求
 在apache配置虚拟主机
 在httpd-vhost.conf里面添加
+
 <VirtualHost 127.0.0.1:80>
+
 	#项目位置
+
     DocumentRoot "C:/wamp/www/run/admin"
+
     ServerName www.run.com
+
     DirectoryIndex index.php index.html 
+
 </VirtualHost>
 
 在hosts里面添加（host文件位置：C:\Windows\System32\drivers\etc\hosts）
+
 127.0.0.1       www.run.com
 
 
  **需要openssl扩展** 
 
-
  **需要pdo扩展** 
 
-
  **需要memcahce扩展,并且安装memcache在你的服务器** 
+
  **需要在php.ini文件里面把 short_open_tag 设置成On** 
+
  **如果可以最好把redis也安装上去，框架会有涉及redis的东西**
 
 记得要在Config里面 apppath.config.php 添加常量
+
 define('PROJECT_NAME','admin'); //项目名称
 
 了解extract()这个函数的作用，如果不了解，你会觉得变量莫名其妙的就出来。
