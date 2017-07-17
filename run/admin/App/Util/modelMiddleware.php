@@ -195,6 +195,30 @@ class modelMiddleware extends Model
 	{
 	    return $this->db->query($sql);
 	}
+	
+    /**
+     * 执行原生sql，查询单条,只是限于在单个数据库，不能执行跨库的sql
+     * @param string $sql
+     * @return array
+     */
+    public function queryOne($sql=''){
+      if(empty($sql)){return false;}
+      $this->getTable($this->tableKey);
+      $data = $this->db->getRow($sql);
+      return $data;
+    }
+    
+    /**
+     * 执行原生sql，查询多条，只是限于在单个数据库，不能执行跨库的sql
+     * @param string $sql
+     * @return array
+     */
+      public function queryAll($sql='') {
+        if(empty($sql)){return false;}
+        $this->getTable($this->tableKey);
+        $data = $this->db->getRows($sql);
+        return $data;
+      }
 
     /**
      * 按条件统计数据
