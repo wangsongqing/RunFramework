@@ -41,19 +41,6 @@ class manage_userModel extends modelMiddleware{
         setAuth($user, 0);
         setVar('manage_'.$user['admin_name'], $user['password'], 360000);
     }
-
-    /**
-     * 按条件统计数据
-     * @param  array  $rule  数据查询规则
-     */
-    public function getCount($rule,$fields="*")
-    {
-        $table = $this->getTable($this->tableKey);
-        $where = where($rule);
-        $sql   = "select count($fields) as total from $table $where";
-        $row   = $this->getRow($sql);
-        return $row['total'];
-    }
     
     /**
      * 尽可能的在model里面做一切相关的数据处理
@@ -87,28 +74,6 @@ class manage_userModel extends modelMiddleware{
 	    array('password','require','请填写登陆密码'),
 	 );
 	return $fields;
-    }
-    
-    /**
-     * 执行原生sql，查询多条
-     * @return array
-     */
-      public function queryAll($sql='') {
-        if(empty($sql)){return false;}
-        $this->getTable($this->tableKey);
-        $data = $this->db->getRows($sql);
-        return $data;
-      }
-   
-     /**
-     * 执行原生sql，查询单条
-     * @return array
-     */
-    public function queryOne($sql=''){
-      if(empty($sql)){return false;}
-      $this->getTable($this->tableKey);
-      $data = $this->db->getRow($sql);
-      return $data;
     }
     
     /**
