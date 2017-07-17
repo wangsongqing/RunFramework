@@ -20,6 +20,17 @@ function actionModels(){
     }
 }
 
+/**
+ * 模型方法，去获取数据对象
+ * @param string $action
+ * @return object
+ */
+function M($action=''){
+    if(empty($action)){return false;}
+    $model = SystemParams::getDB($action);
+    return $model;
+}
+
 
 /**
  * 翻页自定义组合
