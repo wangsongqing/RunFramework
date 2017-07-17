@@ -17,7 +17,7 @@ class IndexAction extends actionMiddleware
     {	
 	extract($this->input);
 	$isSearch = isset($isSearch)?$isSearch:'';
-	$model = $this->import('manage_user');
+	$model = M('manage_user');
 	$rule = array();
 	if($isSearch)
 	{
@@ -36,7 +36,7 @@ class IndexAction extends actionMiddleware
 	if($isPost)
 	{
 	    $salt = saltRound();//生成随机salt
-	    $model = $this->import('manage_user');
+	    $model = M('manage_user');
 	    $_arr = array('admin_name'=>$admin_name,'mobile'=>$mobile,'realname'=>$realname,'created'=>time(),'salt'=>$salt,'password'=>md5(md5($password).$salt));
 	    $result = $model->add($_arr);//返回插入的id
 	    if($result)
@@ -54,7 +54,7 @@ class IndexAction extends actionMiddleware
     {
 	extract($this->input);
 	$id    = isset($id) ? intval($id) : 0;
-	$model = $this->import('manage_user');
+	$model = M('manage_user');
         if(!$id)
 	{
             $this->redirect("参数错误", Root."index/index/");
@@ -88,7 +88,7 @@ class IndexAction extends actionMiddleware
     public function view()
     {
 	extract($this->input);
-	$model = $this->import('manage_user');
+	$model = M('manage_user');
 	$data = $model->find($id,1);
 	$this->display('index/view.php',array('result'=>$data));
     }
@@ -99,7 +99,7 @@ class IndexAction extends actionMiddleware
     public function delete()
     {
 	extract($this->input);
-	$model = $this->import('manage_user');
+	$model = M('manage_user');
 	$rule = array("exact"=>array("admin_id"=>$id));
 	$re = $model->del($rule);
 	if($re){
@@ -129,7 +129,7 @@ class IndexAction extends actionMiddleware
 		$fi=$up->getNewFileName();
 		$fname=$cdirs.'/'.$fi;
 		$data = readExcel($fname);//读取excel内容
-		$model = $this->import('import_user');//注意此处的 import_user 表 在run_impot数据库里面里面
+		$model = M('import_user');//注意此处的 import_user 表 在run_impot数据库里面里面
 		$_arr = array();
 		foreach($data as $key=>$value){
 		    $_arr['name'] = $value['A'];
@@ -153,7 +153,7 @@ class IndexAction extends actionMiddleware
 	if(getFileVar('fileData') && $isUpData==false){
 	    $data = getFileVar('fileData');
 	}else{
-	    $model = $this->import('import_user');
+	    $model = M('import_user');
 	    $data = $model->findAll();
 	    setFileVar('fileData', $data, $expire=3600);
 	}
@@ -183,7 +183,7 @@ class IndexAction extends actionMiddleware
      * 执行原生sql尽可能在model里面执行，这也是为了严格执行mvc和代码整洁
      */
     public function queryAll(){
-    	$model = $this->import('manage_user');
+    	$model = M('manage_user');
     	$sql = "SELECT a.admin_id,b.admin_name FROM `run_manage_log` a,`run_manage_user` b WHERE a.admin_id=b.admin_id";
     	$data = $model->queryAll($sql);//查询多条
     	

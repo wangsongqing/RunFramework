@@ -9,7 +9,7 @@ class LogAction extends actionMiddleware
     {	
 	extract($this->input);
 	$isSearch = isset($isSearch)?$isSearch:'';
-	$model = $this->import('manage_log');
+	$model = M('manage_log');
 	$rule = array();
 	if($isSearch){
 	    isset($beginTime) && isset($endTime) && $rule['other'] = 'created>='.strtotime($beginTime).' AND created<'.strtotime($endTime);

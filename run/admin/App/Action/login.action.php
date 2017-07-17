@@ -22,7 +22,7 @@ class LoginAction extends actionMiddleware
 	    echo json_encode(array('code'=>3,'msg'=>$re[0]));exit;
         }
 	
-	$userModel = $this->import('manage_user');
+	$userModel = M('manage_user');
         //登录
         $response = $userModel->login(isset($account)?$account:'', isset($password)?$password:'');
 	
@@ -44,7 +44,7 @@ class LoginAction extends actionMiddleware
                 'loginTime' => $time,
             );
             $userModel->setLoginStatus($arr);
-	    $this->import('manage_log')->logs($arr);
+	    M('manage_log')->logs($arr);
 	    echo json_encode(array('code'=>1,'msg'=>'欢迎您回来'));exit;
         }
 
