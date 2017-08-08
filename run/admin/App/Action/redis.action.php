@@ -42,6 +42,25 @@ class RedisAction extends actionMiddleware
 	$data = R('user')->findOne($id);
 	$this->display('redis/edit.php',array('data'=>$data));
     }
+    
+    /**
+     * 消息队列处理方式
+     * 先把sql压入到redis，然后通过计划任务来执行sql插入点mysql
+     */
+    public function queue(){
+	//此处sql是模拟sql
+	$re = R()->lpush('sql', "update user set name='wsq' where user_id='10'");
+	if(!$re){//如果压入失败或者redis服务器奔溃等情况，就把数据写入到文件中，保证数据完整性
+	     file_put_contents('log/queue'.date('Y-m-d').'.txt', "update user set name='wsq' where user_id='10'",FILE_APPEND);
+	}
+	$re = R()->lpush('sql', "insert into user('name','age') values('wsq','20')");
+	
+	$data = R()->getlist('sql');
+	foreach($data as $item){
+	    $_sql = R()->rpop('sql');
+	    var_dump($_sql);exit;//在此处执行sql
+	}
+    }
 
 
 
