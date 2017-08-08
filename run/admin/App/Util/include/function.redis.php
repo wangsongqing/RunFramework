@@ -1,6 +1,6 @@
 <?php
 //获取redis对象
-function R($key){
+function R($key=''){
     static $import = true;
     static $cache  = null;
     if ($import)
