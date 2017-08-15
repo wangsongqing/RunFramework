@@ -29,6 +29,11 @@
                 text: '管理员登陆次数统计'
             },
             tooltip: {},
+	    itemStyle:{
+		normal: {
+		    color: '#ccc', //设置颜色
+		}
+	    },
             legend: {
                 data:['管理员登陆次数']
             },
@@ -40,7 +45,8 @@
                 name: '管理员登陆次数',
                 type: 'bar',
                 data: <?=json_encode($num)?>
-            }]
+            }
+	    ]
         };
 
         // 使用刚指定的配置项和数据显示图表。
