@@ -344,7 +344,7 @@ class RunDbPdo implements IDataSource
 			if(is_array($where))
 			{
 				$sql .= " WHERE ";
-				foreach($where as $wFiled => $wValue) $sql .= $wFiled . " = " . $wValue." AND ";
+				foreach($where as $wFiled => $wValue) $sql .= $wFiled . " = " ."'$wValue'"." AND ";
 				$sql = trim($sql," AND ");
 			}
 			else
