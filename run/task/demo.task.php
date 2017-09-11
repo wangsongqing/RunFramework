@@ -3,6 +3,7 @@
  * 计划任务DEMO
  * demo.task.php
  * 执行方法 首先打开cmd  找到你的php.exe文件 在后面执行计划任务文件就可以了
+ * 最原始的执行任务方法，后期已经优化，请看demo1.php是优化后的写法。此处方法可以查看学习
 */
 require_once('config.php');
 class TaskObject

@@ -211,5 +211,18 @@ function parsecontent($str){
 	$data = unserialize(base64_decode($str));
 	return $data;
 }
+
+function where($rule=''){
+    if(is_array($rule)){
+	$key = array();
+	foreach($rule as $key=>$value){
+	    $where[] = $key.'='."'$value'";
+	}
+	$where = 'where '.implode($where, ' AND ');
+	return $where;
+    }else{
+	$where .= $rule;
+    }
+}
  
 ?>
