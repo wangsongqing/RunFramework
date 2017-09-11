@@ -22,7 +22,7 @@ class TaskObject {
 	
 	$data = array('admin_name'=>'wmm');
 	$rule = array('id'=>'37');
-	$result = $model->M('run_manage_log')->edit($data,$rule);//插入数据
+	$result = $model->M('run_manage_log')->edit($data,$rule);//更新数据
 	var_dump($result);
     }
 
