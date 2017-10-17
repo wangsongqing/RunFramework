@@ -13,10 +13,8 @@ class MmCache implements ICache
 	public $mem        = null;    //Memcache对象
 	public $expire     = 300;     //过期时间(5分钟)
 	public $connected  = false;   //连接标识
-	/**zj 20160817 start**/
 	public $compressed = false;   //是否启用数据压缩-暂时停止使用
 	public $compressed_new = true;   //是否启用数据压缩
-	/**zj 20160817 ends**/
 	public $prefix     = 'run_';      //缓存键前缀
 
 	/**
