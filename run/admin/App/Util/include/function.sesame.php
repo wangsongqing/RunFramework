@@ -737,4 +737,28 @@ function get_update_sql($table,$update_data,$rules,$add_self=array()){
     $sql = 'update zm_'.$table.' set '.join(',', $update).' '.$where.';';
     return $sql;
 }
+
+/**
+ * 给二维数组排序
+ * @param type $arrays 数组
+ * @param type $sort_key 按某个字段排序
+ * @param type $sort_order 排序规则：升序还是降序
+ * @param type $sort_type
+ * @return boolean
+ */
+ function my_sort($arrays,$sort_key,$sort_order=SORT_ASC,$sort_type=SORT_NUMERIC){   
+        if(is_array($arrays)){   
+            foreach ($arrays as $array){   
+                if(is_array($array)){   
+                    $key_arrays[] = $array[$sort_key];   
+                }else{   
+                    return false;   
+                }   
+            }   
+        }else{   
+            return false;   
+        }  
+        array_multisort($key_arrays,$sort_order,$sort_type,$arrays);   
+        return $arrays;   
+    }
 ?>
