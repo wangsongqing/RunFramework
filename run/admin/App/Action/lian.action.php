@@ -3,6 +3,28 @@
 /**
  * @author Jimmy Wang <jimmywsq@163.com>
  * 连连看小游戏
+ * 游戏表结构
+ * CREATE TABLE `run_lian` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) unsigned NOT NULL COMMENT '用户ID',
+  `telephone` char(11) NOT NULL COMMENT '用户手机号',
+  `lian_num` int(5) unsigned NOT NULL DEFAULT '0' COMMENT '连接图标个数',
+  `is_floop` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '0:未使用翻倍卡,1:使用翻倍卡',
+  `score` int(5) unsigned NOT NULL DEFAULT '0' COMMENT '本次连连看获得分数',
+  `nick` varchar(20) NOT NULL DEFAULT '' COMMENT '用户的昵称',
+  `pcapital` decimal(8,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '成长金金额',
+  `red_bag` decimal(8,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '现金红包金额',
+  `credit` int(3) unsigned NOT NULL DEFAULT '0' COMMENT '宝贝豆',
+  `red_invest` decimal(8,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '投资红包金额',
+  `join_type` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '参与类型 0免费 1充值 2邀请',
+  `created` int(10) NOT NULL DEFAULT '0' COMMENT '创建时间',
+  `updated` int(10) NOT NULL DEFAULT '0' COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `created` (`created`),
+  KEY `join_type` (`join_type`),
+  KEY `score` (`score`)
+) ENGINE=InnoDB AUTO_INCREMENT=512 DEFAULT CHARSET=utf8 COMMENT='连连看游戏参与记录表'
  */
 class LianAction extends actionMiddleware {
 
