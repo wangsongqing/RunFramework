@@ -32,3 +32,8 @@ $tbl['import_user'] = array(
     'dbId'       => 'import_user',
     'configFile' => $configDir.'run_import.php',
 );
+$tbl['lian'] = array(
+    'name'       => $prefix.'lian',
+    'dbId'       => 'lian',
+    'configFile' => $configDir.'run_user.php',
+);
