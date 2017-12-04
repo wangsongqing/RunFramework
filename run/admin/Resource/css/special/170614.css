@@ -1,0 +1,302 @@
+body {
+  background: #d74b57
+}
+
+.head {
+  height: 14.75rem;
+  background: url(../../images/special_17/0614/hd_bg.png);
+  background-size: cover
+}
+
+.items {
+  padding: 0 0 1.75rem;
+  width: 14.5rem;
+  margin: 0 auto
+}
+
+.items .item {
+  border: 1px solid #f5d69e;
+  border-radius: 1rem;
+  position: relative;
+  padding: 0 0 1.5rem
+}
+
+.items p {
+  color: #ffafb6;
+  font-size: .5rem;
+  line-height: .75rem;
+  width: 13.5rem;
+  margin: -0.75rem auto 0
+}
+
+.items .ti {
+  width: 3rem;
+  height: 1.05rem;
+  background-color: #d74b57;
+  background-size: cover;
+  position: absolute;
+  left: 50%;
+  top: -0.77rem;
+  margin-left: -1.5rem
+}
+
+.items .btns {
+  padding: 0 .4rem;
+  background: #d74b57;
+  width: 8.25rem;
+  background-color: #d74b57;
+  position: absolute;
+  left: 50%;
+  bottom: -1rem;
+  height: 2rem;
+  margin: 0 0 0 -4.15rem
+}
+
+.items .btn {
+  display: inline-block;
+  width: 7.5rem;
+  height: 2rem;
+  background-size: cover
+}
+
+.item-1 {
+  border-color: #f5d69e;
+  border-radius: 1rem;
+  position: relative;
+  margin-top: -0.75rem;
+  padding: 0 0 1.5rem
+}
+
+.item-1 .ti {
+  background-image: url(../../images/special_17/0614/ti_01.png?1706131145)
+}
+
+.item-1 .pic {
+  width: 13.5rem;
+  height: 5.6rem;
+  background: url(../../images/special_17/0614/tx_01.png?1706131145);
+  background-size: cover;
+  margin: .5rem auto 0
+}
+
+.item-1 .btn {
+  background-image: url(../../images/special_17/0614/btn_01.png)
+}
+
+.item-2 {
+  margin-top: 3rem
+}
+
+.item-2 .ti {
+  background-image: url(../../images/special_17/0614/ti_02.png?1706131145)
+}
+
+.item-2 .pic {
+  width: 13.5rem;
+  height: 4.1rem;
+  background: url(../../images/special_17/0614/tx_02.png?1706131145);
+  background-size: cover;
+  margin: 1rem auto 0
+}
+
+.item-2 .btn {
+  background-image: url(../../images/special_17/0614/btn_02.png)
+}
+
+.layermchild.popup-md {
+  max-width: 15rem!important;
+  width: 16rem;
+  min-height: 5rem;
+  border: 1px solid #8b2e2e;
+  background: #fff7c8
+}
+
+.layermchild.popup-md {
+  max-width: 15rem!important;
+  width: 16rem;
+  border: 2px solid #632c2c;
+  background: #fbf7f3
+}
+
+.layermchild.popup-md h3 {
+  border: 0;
+  height: .8rem;
+  line-height: .8rem;
+  text-indent: -999rem
+}
+
+.layermchild.popup-md .layermend {
+  background: #FFF;
+  font-size: 0rem;
+  top: .1rem;
+  right: .1rem;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #632c2c;
+  border-radius: 50%
+}
+
+.layermchild.popup-md .layermend::after,
+.layermchild.popup-md .layermend::before {
+  left: 50%;
+  top: 50%;
+  width: .6rem;
+  height: .05rem;
+  margin: -0.025rem 0 0 -0.3rem;
+  background-color: #632c2c
+}
+
+.layermchild.popup-md .layermbtn {
+  overflow: hidden;
+  border: 0
+}
+
+.layermchild.popup-md .layermbtn span:only-child {
+  background: #ffae00;
+  color: #FFF
+}
+
+.btn-pop {
+  padding: 0 1.5rem;
+  text-align: center;
+  display: inline-block;
+  color: #FFF;
+  border-radius: 1rem;
+  font-size: .85rem;
+  height: 2rem;
+  line-height: 2rem;
+  background: #f7597a;
+  border: 2px solid #632c2c
+}
+
+.popup-1 {
+  text-align: center;
+  font-size: .75rem;
+  color: #632c2c;
+  padding: 0 0 .5rem
+}
+
+.popup-1 .btn-pop {
+  margin: 1rem 0 0
+}
+
+.popup-2 {
+  text-align: center;
+  font-size: .75rem;
+  color: #632c2c
+}
+
+.popup-2 .pic {
+  margin: .5rem 0 0;
+  width: 14rem;
+  height: 3rem;
+  background-image: url(../../images/special/mqj_520y.jpg);
+  background-size: cover
+}
+
+.popup-2 p {
+  position: relative;
+  z-index: 9
+}
+
+.popup-2 .money {
+  color: #f7597a;
+  padding: 1rem 0 .25rem
+}
+
+.popup-2 .money span {
+  font-size: 3rem;
+  font-weight: 600
+}
+
+.popup-2 .icon-heart {
+  position: absolute;
+  right: 2.5rem;
+  top: 0
+}
+
+.popup-3 {
+  min-height: 2.5rem;
+  padding: .25rem 0 .5rem;
+  text-align: center;
+  position: relative;
+  font-size: .75rem;
+  color: #632c2c
+}
+
+.popup-3 .icon-heart {
+  position: absolute;
+  right: 1.5rem;
+  top: .2rem
+}
+
+.popup-4 {
+  text-align: center;
+  font-size: .75rem;
+  color: #632c2c
+}
+
+.popup-4 p {
+  font-size: .6rem
+}
+
+.popup-2 p {
+  font-size: .6rem
+}
+
+.popup-3 p {
+  font-size: .6rem;
+  padding: .25rem 0
+}
+
+.popup-4 .btn-pop {
+  margin: .5rem 0 0
+}
+
+.popup-4 p {
+  font-size: .9rem;
+  font-weight: bold;
+  padding: .25rem 0 0
+}
+
+.popup-5 {
+  text-align: center
+}
+
+.popup-5 p {
+  position: relative;
+  z-index: 9
+}
+
+.popup-5 .money {
+  color: #f7597a;
+  padding: 1rem 0 .25rem
+}
+
+.popup-5 .money span {
+  font-size: 3rem;
+  font-weight: 600
+}
+
+.icon-heart {
+  width: 1.05rem;
+  height: 1.05rem;
+  background: url(../../images/special/icon_mqj_heart.png);
+  background-size: cover;
+  display: inline-block
+}
+
+.ui-btn {
+  width: 9.5rem;
+  height: 2rem;
+  background: #f64a67;
+  color: #FFF;
+  line-height: 2rem;
+  border: 1px solid #8b2e2e;
+  display: inline-block;
+  border-radius: 2rem
+}
+
+.ui-btn:active {
+  background: #ff5e6d
+}
