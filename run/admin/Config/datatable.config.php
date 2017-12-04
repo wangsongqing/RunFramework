@@ -37,3 +37,8 @@ $tbl['lian'] = array(
     'dbId'       => 'lian',
     'configFile' => $configDir.'run_user.php',
 );
+$tbl['play_hamster'] = array(
+    'name'       => $prefix.'play_hamster',
+    'dbId'       => 'play_hamster',
+    'configFile' => $configDir.'run_user.php',
+);
