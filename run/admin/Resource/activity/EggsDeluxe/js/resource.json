@@ -1,0 +1,43 @@
+{
+  "path": "/Resource/activity/EggsDeluxe/images/",
+  "manifest": [{
+    "src": "gm_bg.jpg?12121527",
+    "id": "BG"
+  }, {
+    "src": "loading.png",
+    "id": "loading"
+  }, {
+    "src": "fighting.png",
+    "id": "fighting"
+  },{
+    "src": "ft_bg.png?12121527",
+    "id": "ft"
+  }, {
+    "src": "tree.png",
+    "id": "tree"
+  }, {
+    "src": "egg.png",
+    "id": "egg"
+  }, {
+    "src": "sprite.png",
+    "id": "sprite"
+  }, {
+    "src": "rope.png",
+    "id": "rope"
+  }, {
+    "src": "chickens.png",
+    "id": "chicken"
+  }, {
+    "src": "btn_start.png",
+    "id": "btnStart"
+  }, {
+    "src": "egg.png",
+    "id": "egg"
+  }, {
+    "src": "baskets.png",
+    "id": "baskets"
+  }, {
+    "src": "buckets.png",
+    "id": "buckets"
+  }]
+}
