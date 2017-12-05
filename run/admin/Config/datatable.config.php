@@ -42,3 +42,8 @@ $tbl['play_hamster'] = array(
     'dbId'       => 'play_hamster',
     'configFile' => $configDir.'run_user.php',
 );
+$tbl['catch_egg'] = array(
+    'name'       => $prefix.'catch_egg',
+    'dbId'       => 'catch_egg',
+    'configFile' => $configDir.'run_user.php',
+);
