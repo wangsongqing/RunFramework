@@ -138,6 +138,7 @@ class ModelFactory
 	{
 		$modelFile = substr(strtolower($model), 0, strlen($model)-5).'.model';
 		$reqFile   = $this->findFile($modelFile);
+                //if($reqFile == null){return null;} //如果需要不建立model文件就可以访问数据库就需要做这一步，现在先不做处理 jimmy
 		if($reqFile == null) RunException::throwException("找不到模型类文件 $modelFile.php");
 		require_once($reqFile);
 		if(!class_exists($model)) RunException::throwException('找不到Model类 '.$model);
