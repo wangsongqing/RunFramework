@@ -20,27 +20,5 @@ class manage_loginModel extends modelMiddleware{
         $row   = $this->getRow($sql);
         return $row['total'];
     }
-    
-    /**
-     * 执行原生sql，查询多条
-     * @return array
-     */
-      public function queryAll($sql='') {
-        if(empty($sql)){return false;}
-        $this->getTable($this->tableKey);
-        $data = $this->db->getRows($sql);
-        return $data;
-      }
-   
-     /**
-     * 执行原生sql，查询单条
-     * @return array
-     */
-    public function queryOne($sql=''){
-      if(empty($sql)){return false;}
-      $this->getTable($this->tableKey);
-      $data = $this->db->getRow($sql);
-      return $data;
-    }
 
 }
