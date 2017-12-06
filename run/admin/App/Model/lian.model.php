@@ -17,7 +17,7 @@ class lianModel extends modelMiddleware {
      */
 
     public static function _model() {
-        $model = SystemParams::getDB('lian');
+        $model = M('lian');
         return $model;
     }
 

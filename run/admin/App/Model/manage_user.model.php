@@ -47,7 +47,7 @@ class manage_userModel extends modelMiddleware{
      * @return object
      */
     public static function _model(){
-	$model = SystemParams::getDB('manage_user');
+	$model = M('manage_user');
 	return $model;
     }
     
@@ -56,7 +56,7 @@ class manage_userModel extends modelMiddleware{
      * @return array
      */
     public function selectOne(){
-	$model = SystemParams::getDB('manage_log');
+	$model = M('manage_log');
 	$data = $model->findOne(1);
 	return $data;
     }

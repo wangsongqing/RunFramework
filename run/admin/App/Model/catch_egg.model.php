@@ -17,7 +17,7 @@ class catch_eggModel extends modelMiddleware {
      */
 
     public static function _model() {
-        $model = SystemParams::getDB('play_hamster');
+        $model = M('play_hamster');
         return $model;
     }
 

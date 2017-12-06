@@ -15,7 +15,7 @@ class import_userModel extends modelMiddleware{
      * @return object
      */
     public static function _model(){
-	$model = SystemParams::getDB('manage_log');
+	$model = M('manage_log');
 	return $model;
     }
     
