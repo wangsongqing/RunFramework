@@ -165,7 +165,7 @@ class Resource
 	 */
 	private function create($object)
 	{
-		$str = "<?\r\n";
+		$str = "<?php\r\n";
 		foreach($object as $key=>$val)
 		{
 			if(is_array($object[$key]))
