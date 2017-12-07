@@ -26,12 +26,12 @@ $objects[] = array(
 $objects[] = array(
 'id'         => 'mysql',
 'enable'     => true,
-'source'     => Lib.'/Db/RunMysql.php',
-'className'  => 'RunMysql',
+'source'     => Lib.'/Db/RunDbPdo.php',
+'className'  => 'RunDbPdo',
 'import'     => array(Lib.'/Db/IDataSource.php'),
 'property'   => array(
 	'objRef'      => array('hook'=>'dbHook', 'page' => 'pager'),
-	'configFile'  => '../'.PROJECT_NAME.'/Config/mysql.config.php'
+	'configFile'  => 'Config/mysql.config.php'
 ));
 
 
@@ -79,19 +79,7 @@ $objects[] = array(
 'className' => 'TableManager',
 'initMethod' => 'load',
 'property'   => array(
-	'configFile' => '../'.PROJECT_NAME.'/Config/datatable.config.php'
-));
-//银行卡内存数据库
-$objects[] = array(
-'id'        => 'bank',
-'enable'    => true,
-'source'    => Lib.'/Util/MmCache.php',
-'className' => 'MmCache',
-'import'    => array(Lib.'/Util/ICache.php'),
-'property'  => array(
-    'expire'     => 1800000,
-	'compressed' => true,
-	'configFile' => 'Config/mdb/bank.mdb.config.php'
+	'configFile' => 'Config/datatable.config.php'
 ));
 
 //Memcache
@@ -104,7 +92,7 @@ $objects[] = array(
     'property'  => array(
         'expire'     => 1800,
         'compressed' => true,
-        'configFile' => '../'.PROJECT_NAME.'/Config/memcache.config.php'
+        'configFile' =>'Config/memcache.config.php'
     ));
 
 
