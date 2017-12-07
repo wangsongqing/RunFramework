@@ -62,7 +62,7 @@
         </div>
         <div class="btns">
             <a href="/playhamster/start/<?= !empty($goods_id) ? ('?goods_id=' . $goods_id) : ''; ?>" class="btn"></a>
-            <p>本活动解释权归宝宝钱包所有</p>
+            <p>本活动解释权归run所有</p>
         </div>
         <div id="popup">
             <div class="dialog">

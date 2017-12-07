@@ -66,7 +66,7 @@
                 </div>
                 <div class="btns">
                     <a href="javascript:;" class="btn" id="btn_start"></a>
-                    <p>本活动权归宝宝钱包所有</p>
+                    <p>本活动权归run所有</p>
                 </div>
             </div>
             <div class="game-loading" id="loading">
