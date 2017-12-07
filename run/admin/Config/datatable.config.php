@@ -47,3 +47,13 @@ $tbl['catch_egg'] = array(
     'dbId'       => 'catch_egg',
     'configFile' => $configDir.'run_user.php',
 );
+$tbl['answer_attend'] = array(
+    'name'       => $prefix.'answer_attend',
+    'dbId'       => 'answer_attend',
+    'configFile' => $configDir.'run_user.php',
+);
+$tbl['answer_questions'] = array(
+    'name'       => $prefix.'answer_questions',
+    'dbId'       => 'answer_questions',
+    'configFile' => $configDir.'run_user.php',
+);
