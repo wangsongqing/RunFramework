@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>宝宝钱包</title>
+        <meta content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width" name="viewport">
+        <meta name="keywords" content=""/>
+        <meta name="description" content="wsq是一款针对育儿用户的智能投顾工具，帮助年轻父母安全快捷实现亲子理财，预期年化收益率可达10%。软银中国保驾护航，百万妈妈信赖选择。"/>
+        <link href="<?=Resource?>css/common.css?r=20170517" type="text/css" rel="stylesheet"/>
+        <link href="<?=Resource?>activity/AnswerGame/css/style.css?r=20170517" type="text/css" rel="stylesheet"/>
+        <script>(function(c) {
+                var f = window, e = document, a = e.documentElement, b = "orientationchange" in window ? "orientationchange" : "resize", d = function() {
+                    var h = a.clientWidth;
+                    if (!h) {
+                        return
+                    }
+                    var g = 20 * (h / 320);
+                    a.style.fontSize = (g > 40 ? 40 : g) + "px"
+                };
+                if (!e.addEventListener) {
+                    return
+                }
+                f.addEventListener(b, d, false);
+                d()
+            })();</script>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="popup">
+                <div class="inner">
+                    <i class="icon icon-tl"></i>
+                    <i class="icon icon-tr"></i>
+                    <i class="icon icon-bl"></i>
+                    <i class="icon icon-br"></i>
+                    <div class="hd"></div>
+                    <div class="bd"></div>
+                    <div class="fd"></div>
+                </div>
+                <a href="javascript:;" class="close">X</a>
+            </div>
+            <div class="pg-ticket">
+                <div class="ranking">
+                    <div class="hd"></div>
+                    <div class="bd">
+                        <div class="inner">
+                            <div class="ti"><i class="icon-l"></i><i class="ti-ticket"></i><i class="icon-r"></i></div>
+                            <div class="avatar">
+                                <img src="<?=isset($data['avatar'])?$data['avatar']:''?>" alt="">
+                            </div>
+                            <div class="form-ticket">
+                                <dl>
+                                    <dt><i class="icon-1"></i></dt>
+                                    <dd>
+                                        <input type="text" class="ipt" value="<?=isset($data['nick'])?$data['nick']:''?>" readonly="readonly">
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt><i class="icon-2"></i></dt>
+                                    <dd>
+                                        <a href="javascript:;" class="ipt" data-rel="ActionSheet" data-as-id="course_type">
+                                            <input type="hidden" name="course_type" value="0"><span class="text">请选择科目<i class="icon-sel"></i></span><i class="icon-arrow"></i></a>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt><i class="icon-3"></i></dt>
+                                    <dd>
+                                        <input type="text" class="ipt" value="<?=isset($activity['start_time'])?date('m月d日',$activity['start_time']).'-':''?><?=isset($activity['end_time'])?date('m月d日',$activity['end_time']):''?>" readonly="readonly">
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btns">
+                    <a href="javascript:;" class="btn" id="btn_start"></a>
+                </div>
+            </div>
+            <div class="games">
+                <div class="head">
+                    <div class="inner">
+                        <div class="score"><i></i><span id="score">0</span></div>
+                        <div class="countdown"><i></i><span id="countdown"></span></div>
+                    </div>
+                </div>
+                <div class="question" id="question"></div>
+                <div class="answer" id="answer"></div>
+            </div>
+            <div class="pg-over">
+                <div class="head">
+                    <div class="links">
+                        <a href="javascript:;" class="btn btn-rule"></a>
+                        <a href="/answer/my_score/" class="btn btn-result"></a>
+                    </div>
+                    <div class="pic"></div>
+                    <p>考试结束，得分<span id="over_score">0</span></p>
+                </div>
+                <div class="ranking">
+                    <div class="hd"></div>
+                    <div class="bd">
+                        <div class="inner">
+                            <div class="ti"><i class="ti-08"></i></div>
+                            <ul>
+                                <li>
+                                    <p>0</p>成长金(元)
+                                    <i class="split"></i>
+                                </li>
+                                <li>
+                                    <p>0</p>宝贝豆(个)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="btns">
+                    <a href="/grow/grow_obtained/" class="btn btn-view"></a>
+                    <a href="javascript:;" class="btn btn-restart" id="btn_restart"></a>
+                </div>
+                <div class="ranking ranking-score">
+                    <div class="bd">
+                        <div class="ti"><i class="ti-03"></i></div>
+                        <table width="100%" cellspacing="0" cellpadding="0" border="0" class="tab-1">
+                            <tr>
+                                <td width="30%"><i class="icon-04"></i>******</td>
+                                <td width="40%">******</td>
+                                <td width="30%">0分</td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><i class="icon-05"></i>******</td>
+                                <td width="40%">******</td>
+                                <td width="30%">0分</td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><i class="icon-06"></i>******</td>
+                                <td width="40%">******</td>
+                                <td width="30%">0分</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="ft-bg">
+                <p>本活动解释权归run所有</p>
+            </div>
+        </div>
+        <div class="actionsheet-menu" id="course_type">
+            <div class="hd">选择考试科目<a href="javascript:;" class="close"></a>
+            </div>
+            <div class="bd">
+                <ul>
+                    <li data-val="1"><?php echo '育儿';?></li>
+                </ul>
+            </div>
+        </div>
+        <script src="<?=Resource?>js/zepto.min.js"></script>
+        <script src="<?=Resource?>js/base.js"></script>
+        <script src="<?=Resource?>js/layer/layer.m.js"></script>
+        <script src="<?=Resource?>activity/AnswerGame/js/main.js?r=1705221505"></script>
+        <script src="<?=Resource?>js/rsa.js"></script>
+        <script src="<?=Resource?>js/run_encryption.js"></script>
+        <script>
+            AnswerGame.init({
+                time: 1000*20,//答题时间
+                price: '1',//答对加分
+                err_price: '0',//打错减分
+            });
+            $(function() {
+                $(".btn-rule").on("click", function() {
+                    Popup.show({
+                        title: '<div class="ti ti-01"></div>',
+                        content: '<p>1.每次答题总时长100秒，限答30题，答对1题得6分，答错1题扣2分；<br>\
+                                                2.登录用户答题结束根据得分情况获得成长金和宝贝豆；<br>\
+                                                3.每人每天赠送1次答题机会；活动链接发给好友最高增加1次机会；10人次及以上好友助力增加1次机会；邀请好友最多可增加3次机会；<br>\
+                                                4.6月30日活动结束后根据总分及单科排行给予现金、成长金和加息券奖励。</p>'
+                    })
+                });
+            })
+        </script>
+
+        <?php include View.'/share/share.template.html'?>
+
+    </body>
+</html>

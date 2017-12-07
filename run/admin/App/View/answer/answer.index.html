@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+    <title>wsq</title>
+	<meta content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width" name="viewport">
+    <meta name="keywords" content=""/>
+    <meta name="description" content="wsq是一款针对育儿用户的智能投顾工具，帮助年轻父母安全快捷实现亲子理财，预期年化收益率可达10%。软银中国保驾护航，百万妈妈信赖选择。"/>
+	<link href="<?=Resource?>css/common.css" type="text/css" rel="stylesheet"/>
+	<link href="<?=Resource?>activity/AnswerGame/css/style.css?1705051015" type="text/css" rel="stylesheet"/>
+	<script>(function(c){var f=window,e=document,a=e.documentElement,b="orientationchange" in window?"orientationchange":"resize",d=function(){var h=a.clientWidth;if(!h){return}var g=20*(h/320);a.style.fontSize=(g>40?40:g)+"px"};if(!e.addEventListener){return}f.addEventListener(b,d,false);d()})();</script>
+</head>
+<body>
+ <div class="wrap">
+ 	<div class="popup">
+ 		<div class="inner">
+	 		<i class="icon icon-tl"></i>
+	 		<i class="icon icon-tr"></i>
+	 		<i class="icon icon-bl"></i>
+	 		<i class="icon icon-br"></i>
+		 	<div class="hd"></div>
+		 	<div class="bd"></div>
+		 	<div class="fd"></div>
+	 	</div>
+	 	<a href="javascript:;" class="close">X</a>
+ </div>
+	<div class="pg-st">
+		<div class="head">
+		  <div class="links">
+		  	<a href="javascript:;" class="btn btn-rule"></a>
+		  	<a href="/answer/my_score/" class="btn btn-result"></a>
+		  </div>
+			<div class="pic"></div>
+		</div>
+		<div class="ranking">
+			<div class="hd"></div>
+			<div class="bd">
+				<div class="inner">
+					<div class="ti"><i class="icon-l"></i><i class="ti-score"></i><i class="icon-r"></i></div>
+					<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tab-1">
+						<?
+							foreach($answer_top3 as $key => $v){
+							$k = $key+1;
+						?>
+							<tr>
+								<td width="30%"><i class="icon-<?=$k?>"></i><?=isset($v['nick'])?$v['nick']:'******'?></td>
+								<td width="40%"><?=isset($v['telephone'])?$v['telephone']:'******'?></td>
+								<td width="30%"><?=isset($v['total_score'])?intval($v['total_score']):0?>分</td>
+							</tr>
+						<?}?>
+					</table>
+				</div>
+				<div class="link"><a href="/answer/rank/">更多排行》</a></div>
+			</div>
+		</div>
+		<div class="btns">
+			<a href="/answer/start_answer/" class="btn"></a>
+		</div>
+	</div>
+	<div class="ft-bg">
+		<p>本活动解释权归wsq所有</p>
+	</div>
+</div>
+<script src="<?=Resource?>js/zepto.min.js"></script>
+<script src="<?=Resource?>js/base.js"></script>
+<script src="<?=Resource?>js/layer/layer.m.js"></script>
+<script src="<?=Resource?>activity/AnswerGame/js/main.js?1705051110"></script>
+<script src="<?=Resource?>js/rsa/rsa.js"></script>
+<script src="<?=Resource?>js/run_encryption.js"></script>
+    
+
+<script type="text/javascript">
+$(function(){
+	$(".btn-rule").on("click",function(){
+      Popup.show({
+        title:'<div class="ti ti-01"></div>',
+        content:'<p>1.每次答题总时长100秒，限答30题，答对1题得6分，答错1题扣2分；<br>\
+    				2.登录用户答题结束根据得分情况获得成长金和宝贝豆；<br>\
+    				3.每人每天赠送1次答题机会；活动链接发给好友最高增加1次机会；10人次及以上好友助力增加1次机会；邀请好友注册关注最多可增加3次机会；<br>\
+    				4.6月30日活动结束后根据总分及单科排行给予现金、成长金和加息券奖励。</p>'
+      })
+  });
+})
+</script>
+</body>
+</html>

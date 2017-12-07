@@ -1,0 +1,44 @@
+<div class="head">
+	<div class="pic"></div>
+	<p>考试结束，得分<span id="over_score"><?=isset($result['score'])?$result['score']:0;?></span></p>
+</div>
+<div class="ranking">
+	<div class="hd"></div>
+	<div class="bd">
+		<div class="inner">
+			<div class="ti"><i class="icon-l"></i><i class="ti-result"></i><i class="icon-r"></i></div>
+			<ul>
+				<li>
+					<p>1</p>成长金(元)
+					<i class="split"></i>
+				</li>
+				<li>
+					<p>1</p>宝贝豆(个)
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="btns">
+	<a href="/user/my_reward/" class="btn btn-view"></a>
+	<a href="javascript:;" class="btn btn-restart" id="btn_restart"></a>
+</div>
+<? if($rank_info){?>
+<div class="ranking ranking-score">
+	<div class="bd">
+		<div class="ti"><i class="icon-l"></i>排行<i class="icon-r"></i></div>
+		<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tab-1">
+				<?
+					foreach($rank_info as $key => $v){
+					$k = $key+1;
+				?>
+					<tr>
+						<td width="30%"><i class="icon-<?=$k?>"></i><?=isset($v['nick'])?$v['nick']:'******'?></td>
+						<td width="40%"><?=isset($v['telephone'])?$v['telephone']:'******'?></td>
+						<td width="30%"><?=isset($v['score'])?intval($v['score']):'0'?>分</td>
+					</tr>
+				<?}?>
+		</table>
+	</div>
+</div>
+<?}?>

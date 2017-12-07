@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>wsq</title>
+        <meta content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width" name="viewport">
+        <meta name="keywords" content=""/>
+        <meta name="description" content="wsq是一款针对育儿用户的智能投顾工具，帮助年轻父母安全快捷实现亲子理财，预期年化收益率可达10%。软银中国保驾护航，百万妈妈信赖选择。"/>
+        <link href="<?=Resource?>css/common.css" type="text/css" rel="stylesheet"/>
+        <link href="<?=Resource?>activity/AnswerGame/css/style.css?1705221444" type="text/css" rel="stylesheet"/>
+        <script>(function(c) {
+                var f = window, e = document, a = e.documentElement, b = "orientationchange" in window ? "orientationchange" : "resize", d = function() {
+                    var h = a.clientWidth;
+                    if (!h) {
+                        return
+                    }
+                    var g = 20 * (h / 320);
+                    a.style.fontSize = (g > 40 ? 40 : g) + "px"
+                };
+                if (!e.addEventListener) {
+                    return
+                }
+                f.addEventListener(b, d, false);
+                d()
+            })();</script>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="pg-tab">
+                <div class="head">
+                    <ul>
+                        <li><a href="/answer/rank/"><i class="icon-1"></i></a></li>
+                        <li class="active"><i class="icon-2"></i></li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <div class="datas">
+                        <ul>
+                            <li><p>10</p>总次数(次)</li>
+                            <li><p>1</p>总排名(名)</li>
+                            <li><p>100</p>总分数(分)</li>
+                        </ul>
+                    </div>
+                    <div class="ranking">
+                        <div class="hd"></div>
+                        <div class="bd">
+                            <div class="inner">
+                                <div class="ti"><i class="icon-l"></i>我的最高分<i class="icon-r"></i></div>
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0" class="tab-2">
+                                    <tr>
+                                        <th width="50%">科目</th>
+                                        <th width="50%">最高分数</th>
+                                    </tr>
+                                    <tr>
+                                        <td>育儿</td>
+                                        <td><span class="c-red">90</span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btns">
+                        <a href="www.baidu.com" class="btn"></a>
+                    </div>
+                    <div class="my-score">
+                        <div class="ti"></div>
+                        <table width="100%" cellspacing="0" cellpadding="0" border="0" class="tab-2" id = 'statement_page'>
+
+                            <?if(!empty($answer_attend['record'])){?>
+                            <tr>
+                                <th width="20%">科目</th>
+                                <th width="30%">分数</th>
+                                <th width="50%">参与时间</th>
+                            </tr>
+                            <tr>
+                                <td>育儿</td>
+                                <td>10</td>
+                                <td><span class="date"><?=date('Y/m/d H:i',time());?></span></td>
+                            </tr>
+
+                            <?}else{?>
+                            <tr>
+                                <td  colspan="3"><a href="www.baidu.com">对不起：你还没有成绩，现在去答题吧！</a></td>
+                            </tr>	
+                            <?}?>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="ft-bg">
+                <p>本活动解释权归wsq所有</p>
+            </div>
+        </div>
+        <?require(View.'/public/js.html');?> 
+    </body>
+</html>

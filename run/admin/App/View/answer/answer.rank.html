@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>run</title>
+        <meta content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width" name="viewport">
+        <meta name="keywords" content=""/>
+        <meta name="description" content="run是一款针对育儿用户的智能投顾工具，帮助年轻父母安全快捷实现亲子理财，预期年化收益率可达10%。软银中国保驾护航，百万妈妈信赖选择。"/>
+        <link href="<?=Resource?>css/common.css" type="text/css" rel="stylesheet"/>
+        <link href="<?=Resource?>activity/AnswerGame/css/style.css" type="text/css" rel="stylesheet"/>
+        <script>(function(c) {
+                var f = window, e = document, a = e.documentElement, b = "orientationchange" in window ? "orientationchange" : "resize", d = function() {
+                    var h = a.clientWidth;
+                    if (!h) {
+                        return
+                    }
+                    var g = 20 * (h / 320);
+                    a.style.fontSize = (g > 40 ? 40 : g) + "px"
+                };
+                if (!e.addEventListener) {
+                    return
+                }
+                f.addEventListener(b, d, false);
+                d()
+            })();</script>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="pg-tab">
+                <div class="head">
+                    <ul>
+                        <li class="active"><i class="icon-1"></i></li>
+                        <li><a href="/answer/my_score/"><i class="icon-2"></i></a></li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <div class="ranking">
+                        <div class="hd"></div>
+                        <div class="bd">
+                            <div class="inner">
+                                <div class="ti"><i class="icon-l"></i><i class="ti-score"></i><i class="icon-r"></i></div>
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0" class="tab-1">
+                                    <?if(!empty($answer_top3)){?>
+                                    <?foreach( $answer_top3 as $key=>$val){?>
+                                    <tr>
+                                        <td width="35%"><i class="icon-<?=$key+1?>"></i><?=isset($val['nick'])?$val['nick']:'******'?></td>
+                                        <td width="35%"><?=isset($val['telephone'])?$val['telephone']:'******'?></td>
+                                        <td width="30%"><?=isset($val['total_score'])?$val['total_score']:'0'?>分</td>
+                                    </tr>
+                                    <?}?>
+                                    <?}?>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ranking">
+                        <div class="hd"></div>
+                        <div class="bd">
+                            <div class="inner">
+                                <div class="ti"><i class="icon-l"></i>育儿排行<i class="icon-r"></i></div>
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0" class="tab-1">
+                                    <tr>
+                                        <td width="30%"><i class="icon-1"></i>萌萌</td>
+                                        <td width="40%">18200000001</td>
+                                        <td width="30%">100分</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="ft-bg">
+                    <p>本活动解释权归wsq所有</p>
+                </div>
+            </div>
+    </body>
+</html>
