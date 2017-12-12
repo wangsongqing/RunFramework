@@ -761,4 +761,21 @@ function get_update_sql($table,$update_data,$rules,$add_self=array()){
         array_multisort($key_arrays,$sort_order,$sort_type,$arrays);   
         return $arrays;   
     }
+    
+    /**
+    * 判断是否为微信
+    * @return bool
+    */
+   function isWeixin()
+   {
+       if(isset($_SERVER['HTTP_USER_AGENT'])){
+           if(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') === false && strpos($_SERVER['HTTP_USER_AGENT'], 'Windows Phone') === false ){
+               return false;//非微信
+           }else{
+               return true;
+           }
+       }else{
+         return  false;
+       }
+   }
 ?>
