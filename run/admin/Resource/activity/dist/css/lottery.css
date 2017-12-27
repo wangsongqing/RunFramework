@@ -1,0 +1,69 @@
+.lottery {
+  width: 5.26rem;
+  height: 5.29rem;
+  margin: .16rem auto 0;
+  background: #3a1b13;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+.lottery table tr td {
+  position: relative;
+  text-align: center;
+  padding: .16rem 0 0 .16rem;
+}
+.lottery table tr td img {
+  width: 1.54rem;
+  height: 1.54rem;
+  display: block;
+  font-size: 0;
+}
+.lottery table tr td a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.86rem;
+  height: 1.86rem;
+  z-index: 0;
+  outline: 0 none;
+}
+.lottery table tr td a div {
+  overflow: hidden;
+  margin: .3rem 0 0 .08rem;
+  height: 1.45rem;
+  width: 1.72rem;
+}
+.lottery table tr td a div.game-1 {
+	background: url(/Resource/activity/dist/images/sprite/sprite.png) 0 0 no-repeat;
+	background-size: 3.44rem;
+}
+.lottery table tr td a div.game-2 {
+	background: url(/Resource/activity/dist/images/sprite/sprite.png) -1.72rem 0 no-repeat;
+	background-size: 3.44rem;
+}
+.lottery table tr td a div.game-3 {
+  background: url(/Resource/activity/dist/images/login.png) center no-repeat;
+  background-size: 1.72rem;
+}
+.lottery table tr .td:after {
+  position: absolute;
+  display: block;
+  width: 1.54rem;
+  height: 1.54rem;
+  top: .16rem;
+  left: .16rem;
+  background: rgba(0, 0, 0, 0.5);
+  content: '';
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+.lottery table tr .active:after {
+  width: 0;
+  height: 0;
+  content: '';
+}

@@ -1,0 +1,32 @@
+.bb {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  color: #9c9c9c;
+  overflow: hidden;
+}
+.bb .pay-attention {
+  width: 4.88rem;
+  height: 5.7rem;
+  margin: 0 auto;
+  background: #fffffe;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+.bb .pay-attention h1 {
+  margin: 0;
+  padding-top: .7rem;
+  font-weight: normal;
+  color: #666;
+}
+.bb .pay-attention img {
+  display: block;
+  width: 2.81rem;
+  margin: .45rem auto .5rem;
+}
