@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>幸运大转盘</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta name = "format-detection" content = "telephone=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="/Resource/activity/dist/css/normalize.min.css">
+        <link rel="stylesheet" href="/Resource/activity/dist/css/index.min.css?v1.2">
+        <link rel="stylesheet" href="/Resource/activity/dist/css/lottery.min.css?v1.2">
+        <link rel="stylesheet" href="/Resource/activity/dist/css/alert.min.css">
+        <link rel="stylesheet" href="/Resource/activity/dist/css/payAttentionCode.min.css">    
+    </head>
+    <body>
+        <div class="loader" id="loader"></div>
+
+        <div class="wraper">
+            <div class="ban">
+                <section class="list">
+                    <div class="maquee" id="maquee">
+                        <ul id='ps'>   
+                            <li><div class="fl">18*******23 抽中手机</div></li>
+                            <li><div class="fl">18*******24 抽中手机</div></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <div class="game">
+                <div id="lottery" class="lottery">
+                    <table border="0" cellpadding="0" cellspacing="0">
+                        <tr class="lottery-group">
+                            <td class="lottery-unit td td_1">
+                                <img src="/Resource/activity/dist/images/gift1/gift-1.png"/>
+                            </td>
+                            <td class="lottery-unit td td_2">
+                                <img src="/Resource/activity/dist/images/gift2/gift-2.png"/>
+                            </td>
+                            <td class="lottery-unit td td_3">
+                                <img src="/Resource/activity/dist/images/gift3/gift-3.png"/>
+                            </td>
+                        </tr>
+                        <tr class="lottery-group">
+                            <td class="lottery-unit td td_4">
+                                <img src="/Resource/activity/dist/images/gift8/gift-8.png"/>
+                            </td>
+                            <td class="td_5">
+                                <a href="javascript:void(0)" id="link"><div class="game-1"></div></a>
+                            </td>
+                            <td class="lottery-unit td td_6">
+                                <img src="/Resource/activity/dist/images/gift4/gift-4.png"/>
+                            </td>
+                        </tr>
+                        <tr class="lottery-group">
+                            <td class="lottery-unit td td_7">
+                                <img src="/Resource/activity/dist/images/gift7/gift-7.png"/>
+                            </td>
+                            <td class="lottery-unit td td_8">
+                                <img src="/Resource/activity/dist/images/gift6/gift-6.png"/>
+                            </td>
+                            <td class="lottery-unit td td_9">
+                                <img src="/Resource/activity/dist/images/gift5/gift-5.png"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="current fs24 tc" id="current">
+                    <p>您今日还有 <label class="fs34" ><span id='nums'>22</span></label> 次转盘机会</p>
+                </div>
+            </div>
+            <div class="ruler fs24">
+                <div class="header pr fs28 tc">
+                    <p class="pa tc">活动细则</p>
+                </div>
+                <div class="text">
+                    <div class="clearfix">
+                        <label class="f-fl">1.</label>
+                        <p class="f-fl">投资一笔或邀请一位好友即可获赠1次游戏机会，每人每天最多2次抽奖机会。</p>
+                    </div>
+                    <div class="clearfix">
+                        <label class="f-fl">2.</label>
+                        <p class="f-fl">特权本金有效期均为7天，到期后系统自动收回，收益可随时取现。</p>
+                    </div>
+                    <div class="clearfix">
+                        <label class="f-fl">3.</label>
+                        <p class="f-fl">现金红包将自动发放至用户-我的红包，可立即申请取现。</p>
+                    </div>
+                    <div class="clearfix">
+                        <label class="f-fl">4.</label>
+                        <p class="f-fl">投资/邀请后自动获得抽奖机会，若当日未使用，游戏参与机会将自动消失。</p>
+                    </div>
+                    <div class="clearfix">
+                        <label class="f-fl">5.</label>
+                        <p class="f-fl">实物礼品中奖者，请与客服MM联系噢。</p>
+                    </div>					
+                </div>
+            </div>
+        </div>		
+        <!--活动未开始-->
+        <div class="pf bb none" id='p1'>
+            <div class="g-wraper pr fs24 tc">
+                <a href="javascript:void(0);" class="g-close pa g-i-img gameClose"></a>
+                <div class="g-tip-head"><p>别着急哦，活动不在进行中</p></div>
+                <div class="g-img"><div class="g-i-img g-i-1"></div></div>
+                <div class="g-text"><p>关注“易贷微理财“随时了解最新活动</p></div>
+                <div class="g-btn"><div><a href="/user/">我知道了</a></div></div>
+                <div class="g-tip-bottom"><p></p></div>
+            </div>
+        </div>
+        <!--活动已结束-->
+        <div class="pf bb none" id='p2'>
+            <div class="g-wraper pr fs24 tc">
+                <a href="javascript:void(0);" class="g-close pa g-i-img gameClose"></a>
+                <div class="g-tip-head"><p>抱歉，活动已结束</p></div>
+                <div class="g-img"><div class="g-i-img g-i-2"></div></div>
+                <div class="g-text"><p>关注“易贷微理财“随时了解最新活动</p></div>
+                <div class="g-btn"><div><a href="/user/">我知道了</a></div></div>
+                <div class="g-tip-bottom"><p></p></div>
+            </div>
+        </div>
+        <!--次数已用完-->
+        <div class="pf bb none" id='p3'>
+            <div class="g-wraper pr fs24 tc">
+                <a href="javascript:void(0);" class="g-close pa g-i-img gameClose"></a>
+                <div class="g-tip-head"><p>别贪心哦，今天抽奖次数已用完</p></div>
+                <div class="g-img"><div class="g-i-img g-i-2"></div></div>
+                <div class="g-text g-text-1"><p>今日没玩过瘾？明日再来！</p><p>邀请您的好友来试试手气吧！</p></div>
+                <div class="g-btn"><div><a href="/user/">我知道了</a></div></div>
+                <div class="g-tip-bottom"><p></p></div>
+            </div>
+        </div>
+        <!--展示中奖 还有一次机会 8888特权本金-->
+        <div class="pf bb none" id='p4'>
+            <div class="g-wraper pr fs24 tc">
+                <a href="javascript:void(0);" class="g-close pa g-i-img gameClose"></a>
+                <div class="g-tip-head"><p>下次加油哟</p></div>
+                <div class="g-img"><div class="g-i-img g-i-3"><p id='pname1'>谢谢参与</p></div></div>
+                <div class="g-btn"><div><a href="/buy/index/">投资一笔</a><a href="/web_information/invite/" class="second">邀请好友</a></div></div>
+                <div class="g-btn"><div><a href="/swinggame/index/">继续游戏</a></div></div>
+                <div class="g-tip-bottom"><p></p></div>
+            </div>
+        </div>
+        <!--还剩一次机会 投资一般 邀请好友-->
+        <div class="pf bb none" id='p5'>
+            <div class="g-wraper pr fs24 tc">
+                <a href="javascript:void(0);" class="g-close pa g-i-img gameClose"></a>
+                <div class="g-tip-head"><p class="color-b">加油哦,今天还有1次机会</p></div>
+                <div class="g-img"><div class="g-i-img g-i-0"></div></div>
+                <div class="g-text"><p class="color-b">投资一笔或邀请好友可再玩一次</p></div>
+                <div class="g-btn"><div><a href="/buy/index/">投资一笔</a><a href="/web_information/invite/" class="second">邀请好友</a></div></div>
+                <div class="g-tip-bottom"><p></p></div>
+            </div>
+        </div>
+
+        <!--中奖 小狗电器 投资一般 邀请好友-->
+        <div class="pf bb none" id='p6'>
+            <div class="g-wraper pr fs24 tc">
+                <a href="javascript:void(0);" class="g-close pa g-i-img gameClose"></a>
+                <div class="g-tip-head" id="a4"><p>恭喜您获得</div>
+                <div class="g-img"><div class="g-i-img g-i-3"><p id='pname'></p></div></div>
+                <div class="g-text"><p class="color-b">投资一笔或邀请好友可再玩一次</p></div>
+                <div class="g-btn"><div><a href="/buy/index/">投资一笔</a><a href="/web_information/invite/" class="second">邀请好友</a></div></div>
+                <div class="g-tip-bottom"><p id='a1'>请联系客服mm领取奖品噢！</p></div>
+            </div>
+        </div>
+        <div class="pf bb none" id='p10'>
+            <div class="g-wraper pr fs24 tc">
+                <a href="javascript:void(0);" class="g-close pa g-i-img gameClose"></a>
+                <div class="g-tip-head"><p id='a3'>恭喜您获得</div>
+                <div class="g-img"><div class="g-i-img g-i-3"><p id='pname2'></p></div></div>
+                <div class="g-text g-text-1"><p>今日没玩过瘾？明日再来！</p><p>邀请您的好友来试试手气吧！</p></div>
+                <div class="g-btn"><div><a href="/user/">我知道了</a></div></div>
+                <div class="g-tip-bottom"><p id='a2'>请联系客服mm领取奖品噢！</p></div>
+            </div>
+        </div>    
+
+        <div class="pf bb none" id='p11'>
+            <div class="g-wraper pr fs24 tc">
+                <a href="javascript:void(0);" class="g-close pa g-i-img gameClose"></a>
+                <div class="g-tip-head"><p id='a6'>恭喜您获得</div>
+                <div class="g-img"><div class="g-i-img g-i-3"><p id='pname3'></p></div></div>
+                <div class="g-text"><p>您还有1次游戏机会</p></div>
+                <div class="g-btn"><div><a href="/swinggame/index/">我知道了</a></div></div>
+                <div class="g-tip-bottom"><p id='a5'>请联系客服mm领取奖品噢！</p></div>
+            </div>
+        </div>
+
+        <div class="pf bb none" id='p7'>
+            <div class="g-wraper pr fs24 tc">
+                <a href="javascript:void(0);" class="g-close pa g-i-img gameClose"></a>
+                <div class="g-tip-head"><p>抱歉，您还没有登录哟</p></div>
+                <div class="g-img"><div class="g-i-img g-i-2"></div></div>
+                <div class="g-text"><p>赶紧登录，领取奖品吧！</p></div>
+                <div class="g-btn"><div><a href="/login/index/">登录易贷微理财</a></div></div>
+                <div class="g-tip-bottom"><p></p></div>
+            </div>
+        </div>        
+        <script type="text/javascript" src="/Resource/activity/dist/js/loaderJs.min.js"></script>		
+        <script type="text/javascript" src="/Resource/activity/dist/js/jquery-1.10.1.min.js"></script>	
+        <script type="text/javascript" src="/Resource/activity/dist/js/lottery.min.js"></script>	
+        <script type="text/javascript" src="/Resource/activity/dist/js/alert.min.js"></script>
+        <script type="text/javascript" src="/Resource/activity/dist/js/payAttentionCode.min.js"></script>
+        <script type="text/javascript">
+            /*中奖信息滚动*/
+            function autoScroll(obj) {
+                $(obj).find("ul").animate({
+                    marginTop: "-0.43rem"
+                }, 600, function() {
+                    $(this).css({marginTop: "0"}).find("li:first").appendTo(this);
+                })
+            }
+            setInterval('autoScroll("#maquee")', 2000);
+            /*document ready*/
+            $(function() {
+                var status = 1;
+                var show = 'p6';
+               
+
+                /*弹窗关闭按钮绑定事件*/
+                $('body').on('click', '.gameClose', function() {
+                    Alert.closeDiv();
+                    $(this).parent().parent().hide();
+                })
+                /*中奖滚动信息android垂直居中*/
+                Navigator.version() == 'android' ? $('#maquee').css('line-height', '.5rem') : '';
+                /*简单图片预加载*/
+                var preLoad = document.createElement('div');
+                var preLoadImg = '<label id="preLoadImg" style="background: url(/Resource/activity/dist/images/sprite1/sprite-1.png);"></label>';
+                preLoad.innerHTML = preLoadImg;
+                document.body.appendChild(preLoad);
+                $("#preLoadImg").parent('div').css({'position': 'fixed', 'bottom': '0', 'right': '0', 'width': '0', 'height': '0', 'overflow': 'hidden'})
+
+                lottery.lottery({
+                    selector: '#lottery',
+                    width: 3,
+                    height: 3,
+                    index: 0, // 初始位置
+                    initSpeed: 500, // 初始转动速度
+                    target: 1, // 中奖位置 ,不填值为随机滚动 默认为谢谢参与       
+                    beforeRoll: function() { // 重写滚动前事件                            
+                        var isdo = false;
+                        $.ajax({
+                            type: "GET",
+                            dataType: "json",
+                            url: "/dazhuanpan/send_prize/?" + Date.parse(new Date()),
+                            async: false,
+                            error: function() {
+                                Alert.alertBox('网络出错了哟，请休息一下再抽奖', '确定', 'javascript:void(0);', false)
+                            },
+                            success: function(mess) {
+                                switch (mess.err) {
+                                    case 3: /*活动未开启*/
+                                        $('#p1').show();//展示信息请看id=p1,代码114行
+                                        lottery._enable();
+                                        Alert.showDiv();
+                                        break;
+                                    case 5:
+                                        lottery.options.target = mess.data.id;
+                                        $('#pname').html(mess.data.name);
+                                        //mess.data.id == 4 ? $('#a4').html('很遗憾，奖品和您擦肩而过....') : '';
+                                        $('#a1').html('新萌网');
+
+                                        /*改变开始按钮状态*/
+                                        $("#link").find('div').removeClass('game-1').addClass('game-2')
+                                        /*开始转动转盘*/
+                                        lottery._roll();
+                                        $('#nums').html(1);//剩余次数
+                                        break;
+                                    default:
+                                        break;
+                                }
+                               
+                            }
+                        });
+                    },
+                    _stop: function() {  //转盘停止转动执行							
+                        /*改变开始按钮状态*/
+                        this.container.find('a').find('div').removeClass('game-2').addClass('game-1')
+                        $('#' + show).show();
+                        Alert.showDiv();
+                    },
+                    aim: function() { //获取中奖号							 							
+
+                    }
+                });
+            })
+        </script>
+    </body>
+</html>
