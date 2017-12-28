@@ -192,6 +192,17 @@ class IndexAction extends actionMiddleware
     	echo "<pre>";
     	print_r($_data);
     }
+    
+    /**
+     * 用php生成二维码
+     * <img src="/index/qrcode/" alt="二维码" id="touch" />调用示例
+     */
+    public function qrcode(){
+        require(App.'/Util/phpqrcode.php');
+        //生成二维码图片,最后一个参数是为二维码打logo
+        $str = 'http://wlc.yidai.com';//地址需要加http
+        QRcode::png($str, false, 'L', 5, 2,false,'Resource/images/logoqr.png');
+    }
 
 
 }
