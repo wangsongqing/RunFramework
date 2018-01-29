@@ -57,7 +57,7 @@ class RunException
 	 */
 	public static function throwException($msg)
 	{
-		RunException::writeLog($msg, 'error.log'); //记录日志信息(便于调试)
+		RunException::writeLog($msg, date('Y-m-d').'_'.'error.log'); //记录日志信息(便于调试)
 		if (!defined('Debug')) exit();
 		if (defined('Debug') && Debug==0) exit();
 		if (defined('Debug') && Debug==1) RunException::displayAppError();
