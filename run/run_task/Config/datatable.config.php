@@ -12,8 +12,9 @@
     'configFile' => $configDir.'run_user.php',表所在的数据库配置文件
 );
  */
+$configRoot = realpath('./Config');
 $prefix    = 'run_';
-$configDir = '../'.PROJECT_NAME.'/Config/dbconfig/';
+$configDir = $configRoot.'/dbconfig/';
 /*manage开始*/
 $tbl['manage_user'] = array(
     'name'       => $prefix.'manage_user',
