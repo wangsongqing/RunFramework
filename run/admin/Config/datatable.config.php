@@ -13,7 +13,8 @@
 );
  */
 $prefix    = 'run_';
-$configDir = '../'.PROJECT_NAME.'/Config/dbconfig/';
+$configRoot = realpath('./Config');
+$configDir = $configRoot.'/dbconfig/';
 /*manage开始*/
 $tbl['manage_user'] = array(
     'name'       => $prefix.'manage_user',
