@@ -55,6 +55,8 @@ abstract class Model extends Object {
         }
         /* if ( $slice > 0) { //此处是为数据库集群设计的，当你的数据量小时就不需要关心这块，当你的数据量大的时候可以关注一下，到时候可以邮箱和我探讨
           $databaseId	  =  $slice%200;
+         * //$tables = dirname($tbl[$key]['configFile']);
+        //dirname($tbl[$key]['configFile']).'/corereadonly/service'.$servicedbId.'/core'.$databaseId.'.config.php';
           } */
         $this->db->configFile = $tbl[$key]['configFile'];
         $this->table = $tbl[$key]['name'];
