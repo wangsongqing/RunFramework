@@ -1,4 +1,5 @@
 <?php
+
 /**
   +--------------------------------------------------------------------------------------------
  * Run Framework 所有model的基类
@@ -14,7 +15,8 @@ abstract class Model extends Object {
     public $dbType = 'mysql';
     public $table = '';
     public $cached = false;
-    
+    public $dbId = '';
+
     /**
      * 查询数据的版本key
      */
@@ -51,18 +53,30 @@ abstract class Model extends Object {
         $this->createDbObject();
         $tbl = $this->com('dt')->tbl;
         if (!isset($tbl[$key])) {
-            RunException::throwException("key: $key 对应的数据表不存在!");
+            SpringException::throwException("key: $key 对应的数据表不存在!");
         }
-        /* if ( $slice > 0) { //此处是为数据库集群设计的，当你的数据量小时就不需要关心这块，当你的数据量大的时候可以关注一下，到时候可以邮箱和我探讨
-          $databaseId	  =  $slice%200;
-         * //$tables = dirname($tbl[$key]['configFile']);
-        //dirname($tbl[$key]['configFile']).'/corereadonly/service'.$servicedbId.'/core'.$databaseId.'.config.php';
-          } */
-        $this->db->configFile = $tbl[$key]['configFile'];
-        $this->table = $tbl[$key]['name'];
-        return $this->table;
 
-        RunException::throwException("key: $key 对应的数据表 " . $tbl[$key]['name'] . $slice . "不存在!");
+        if (!isset($tbl[$key]['dbId']) || !isset($tbl[$key]['name']) || !isset($tbl[$key]['configFile'])) {
+            SpringException::throwException("key: $key 对应的数据表配置节点错误!");
+        }
+        
+        $tblName = $tbl[$key]['name'];
+        $this->db->configFile = $tbl[$key]['configFile'];
+        $dbId = $tbl[$key]['dbId'];
+        if ($this->db->dbId == null){
+            $this->db->dbId = $dbId;
+        }else{
+            if ($this->db->dbId != $dbId){
+                $this->db->dbId = $dbId;
+                $this->db->close();
+            }
+        }
+        
+        if ($slice == 0) {
+            $this->table = $tblName;
+            return $this->table;
+        }
+        SpringException::throwException("key: $key 对应的数据表 " . $tbl[$key]['name'] . $slice . "不存在!");
     }
 
     /**
@@ -110,7 +124,6 @@ abstract class Model extends Object {
             $cache->set($this->table . $revisionKey, $revision, 360000);
         }
         $dataKey = empty($revisionKey) ? $sql : $sql . $revision;
-
         return $dataKey;
     }
 
@@ -130,7 +143,6 @@ abstract class Model extends Object {
         $sql = preg_replace("/([\s]+)?=([\s]+)?/", "=", $sql);
         $sql = preg_replace("/[\s]{2,}/", " ", $sql);
         $sql = preg_replace("/=(\d+)/", "='$1'", $sql);
-
         return $sql;
     }
 
@@ -147,7 +159,6 @@ abstract class Model extends Object {
      */
     public final function query($sql) {
         $this->createDbObject();
-
         return $this->db->query($sql);
     }
 
@@ -162,7 +173,6 @@ abstract class Model extends Object {
      */
     public final function getAffected() {
         $this->createDbObject();
-
         return $this->db->getAffected();
     }
 
@@ -177,7 +187,6 @@ abstract class Model extends Object {
      */
     public final function getLastInsId() {
         $this->createDbObject();
-
         return $this->db->getLastInsId();
     }
 
@@ -212,7 +221,6 @@ abstract class Model extends Object {
             }
         } else {
             $this->createDbObject();
-
             return $this->db->getRow($sql);
         }
     }
@@ -238,7 +246,6 @@ abstract class Model extends Object {
             $cache = $this->getCacheObject();
             $dataKey = $this->createKey($sql, $revisionKey, $cache);
             $data = $cache->get($dataKey);
-
             if (!empty($data)) {
                 return $data;
             } else {
@@ -249,7 +256,6 @@ abstract class Model extends Object {
             }
         } else {
             $this->createDbObject();
-
             return $this->db->getRows($sql);
         }
     }
@@ -276,10 +282,7 @@ abstract class Model extends Object {
             $offset = ($pageId - 1) * $pageRows;
             $offset = ($offset < 0) ? 0 : $offset;
             $sqlLimit = ' LIMIT ' . $offset . ',' . $pageRows;
-
-
             $cache = $this->getCacheObject();
-
             $dataKey = $this->createKey($sql . $sqlLimit, $revisionKey, $cache);
             $data = $cache->get($dataKey);
             if (!empty($data)) {
@@ -300,7 +303,6 @@ abstract class Model extends Object {
             $this->createDbObject();
             $this->com('pager')->input = $this->com('dispatcher')->getInput();
             $this->db->page = $this->com('pager');
-
             return $this->db->getPageRows($sql, $pageRows);
         }
     }
@@ -321,7 +323,6 @@ abstract class Model extends Object {
     public final function insert($table, $arr = array()) {
         $this->revision();
         $this->createDbObject();
-
         return $this->db->insert($table, $arr);
     }
 
@@ -345,7 +346,6 @@ abstract class Model extends Object {
     public final function update($table, $arr = array(), $where = '', $add_self = array()) {
         $this->revision();
         $this->createDbObject();
-
         return $this->db->update($table, $arr, $where, $add_self);
     }
 
@@ -365,7 +365,6 @@ abstract class Model extends Object {
     public final function delete($table, $where = '') {
         $this->revision();
         $this->createDbObject();
-
         return $this->db->delete($table, $where);
     }
 
@@ -376,9 +375,7 @@ abstract class Model extends Object {
      */
     public function startTrans($isXA = 0) {
         $this->createDbObject();
-        $this->commit();
-        $this->db->startTrans();
-        return;
+        return $this->db->startTrans();
     }
 
     /**
