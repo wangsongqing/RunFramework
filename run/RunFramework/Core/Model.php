@@ -62,12 +62,14 @@ abstract class Model extends Object {
         
         $tblName = $tbl[$key]['name'];
         $this->db->configFile = $tbl[$key]['configFile'];
-        $dbId = $tbl[$key]['dbId'];
+        $dbId = $tbl[$key]['dbId'];//此处代码是处理切库问题的，单程序在一个action里面需要切库，就需要这些代码
         if ($this->db->dbId == null){
             $this->db->dbId = $dbId;
         }else{
             if ($this->db->dbId != $dbId){
+                echo $dbId.'|'.$this->db->dbId.'<br>';
                 $this->db->dbId = $dbId;
+                
                 $this->db->close();
             }
         }
