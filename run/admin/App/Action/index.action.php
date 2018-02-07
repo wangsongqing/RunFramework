@@ -203,7 +203,43 @@ class IndexAction extends actionMiddleware
         $str = 'http://wlc.yidai.com';//地址需要加http
         QRcode::png($str, false, 'L', 5, 2,false,'Resource/images/logoqr.png');
     }
-
-
+    
+    /**
+     * 事务的使用
+     * 需要注意:这里的事务不能跨库执行，如果需要跨库执行，就需要研究Mysql XA相关知识
+     * @throws Exception
+     */
+    public function transtable(){
+        $msg = '';
+        $flag = 0;
+        try {
+            $model = M('manage_user');
+            $model->startTransTable();//开启事务
+            $_rule['exact']['admin_id'] = 8;
+            $_data = array(
+                'lock_time'=>777,
+            );
+            $re = $model->edit($_data,$_rule);
+            if(!$re){
+                throw new Exception('manage_user:执行失败');
+            }
+            $log_model = M('manage_log');
+            $log_rule['exact']['id'] = 1;
+            $log_data = array(
+                'admin_names'=>'wsq',
+            );
+            $log_re = $log_model->edit($log_data,$log_rule);
+            if(!$log_re){
+                throw new Exception('manage_log:执行失败');
+            }
+            $model->commitTransTable();//事务提交
+            $flag = 1;
+        } catch (Exception $e) {
+            $model->rollbackTransTable();//事务回滚
+            $msg = $e->getMessage();
+        }
+        echo $msg.'<br>';
+        echo $flag;
+    }
 }
 ?>
