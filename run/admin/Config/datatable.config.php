@@ -8,7 +8,7 @@
  * 例如：
  * $tbl['user'] = array(
     'name'       => $prefix.'manage_user', 表名
-    'dbId'       => 'manage_user',//数据库名称
+    'dbId'       => 'manage_user',//数据库名称,必须写数据库名称，此处切库需要用到
     'configFile' => $configDir.'run_user.php',表所在的数据库配置文件
 );
  */
@@ -18,43 +18,43 @@ $configDir = $configRoot.'/dbconfig/';
 /*manage开始*/
 $tbl['manage_user'] = array(
     'name'       => $prefix.'manage_user',
-    'dbId'       => 'manage_user',
+    'dbId'       => 'run_user',
     'configFile' => $configDir.'run_user.php',
 );
 
 $tbl['manage_log'] = array(
     'name'       => $prefix.'manage_log',
-    'dbId'       => 'manage_log',
+    'dbId'       => 'run_user',
     'configFile' => $configDir.'run_user.php',
 );
 
 $tbl['import_user'] = array(
     'name'       => $prefix.'import_user',
-    'dbId'       => 'import_user',
+    'dbId'       => 'run_import',
     'configFile' => $configDir.'run_import.php',
 );
 $tbl['lian'] = array(
     'name'       => $prefix.'lian',
-    'dbId'       => 'lian',
+    'dbId'       => 'run_user',
     'configFile' => $configDir.'run_user.php',
 );
 $tbl['play_hamster'] = array(
     'name'       => $prefix.'play_hamster',
-    'dbId'       => 'play_hamster',
+    'dbId'       => 'run_user',
     'configFile' => $configDir.'run_user.php',
 );
 $tbl['catch_egg'] = array(
     'name'       => $prefix.'catch_egg',
-    'dbId'       => 'catch_egg',
+    'dbId'       => 'run_user',
     'configFile' => $configDir.'run_user.php',
 );
 $tbl['answer_attend'] = array(
     'name'       => $prefix.'answer_attend',
-    'dbId'       => 'answer_attend',
+    'dbId'       => 'run_user',
     'configFile' => $configDir.'run_user.php',
 );
 $tbl['answer_questions'] = array(
     'name'       => $prefix.'answer_questions',
-    'dbId'       => 'answer_questions',
+    'dbId'       => 'run_user',
     'configFile' => $configDir.'run_user.php',
 );
