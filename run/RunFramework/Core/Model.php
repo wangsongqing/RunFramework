@@ -63,13 +63,15 @@ abstract class Model extends Object {
         $tblName = $tbl[$key]['name'];
         $this->db->configFile = $tbl[$key]['configFile'];
         $dbId = $tbl[$key]['dbId'];//此处代码是处理切库问题的，单程序在一个action里面需要切库，就需要这些代码
+        if ( $slice > 0) {
+            $d = $slice % 3;
+            $dbId = $tbl[$key]['dbId'].$d;
+        }
         if ($this->db->dbId == null){
             $this->db->dbId = $dbId;
         }else{
             if ($this->db->dbId != $dbId){
-                echo $dbId.'|'.$this->db->dbId.'<br>';
                 $this->db->dbId = $dbId;
-                
                 $this->db->close();
             }
         }
@@ -78,6 +80,11 @@ abstract class Model extends Object {
             $this->table = $tblName;
             return $this->table;
         }
+        if ( $slice > 0) { //此处是为数据库集群设计的，当你的数据量小时就不需要关心这块，当你的数据量大的时候可以关注一下，到时候可以邮箱和我探讨
+            $this->db->configFile = dirname($tbl[$key]['configFile']).'/core/run_core'.$d.'.php';
+            $this->table = $tblName.$d;
+            return $this->table;
+        } 
         SpringException::throwException("key: $key 对应的数据表 " . $tbl[$key]['name'] . $slice . "不存在!");
     }
 
