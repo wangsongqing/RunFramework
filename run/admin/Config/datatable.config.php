@@ -58,3 +58,8 @@ $tbl['answer_questions'] = array(
     'dbId'       => 'run_user',
     'configFile' => $configDir.'run_user.php',
 );
+$tbl['user'] = array(
+    'name'       => $prefix.'user',
+    'dbId'       => 'run_core',
+    'configFile' => $configDir.'run_core.php',
+);
