@@ -214,10 +214,10 @@ class IndexAction extends actionMiddleware
         $flag = 0;
         try {
             $model = M('manage_user');
-            $model->startTransTable();//开启事务
+            $start = $model->startTrans();//开启事务
             $_rule['exact']['admin_id'] = 8;
             $_data = array(
-                'lock_time'=>777,
+                'lock_time'=>888,
             );
             $re = $model->edit($_data,$_rule);
             if(!$re){
@@ -226,16 +226,16 @@ class IndexAction extends actionMiddleware
             $log_model = M('manage_log');
             $log_rule['exact']['id'] = 1;
             $log_data = array(
-                'admin_names'=>'wsq',
+                'admin_name'=>'wsq444',
             );
             $log_re = $log_model->edit($log_data,$log_rule);
             if(!$log_re){
                 throw new Exception('manage_log:执行失败');
             }
-            $model->commitTransTable();//事务提交
+            $model->commit();//事务提交
             $flag = 1;
         } catch (Exception $e) {
-            $model->rollbackTransTable();//事务回滚
+            $model->rollback();//事务回滚
             $msg = $e->getMessage();
         }
         echo $msg.'<br>';
