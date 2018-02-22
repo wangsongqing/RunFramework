@@ -12,9 +12,9 @@ $_SERVER['REQUEST_URI'] = '' ;
 $_SERVER['REQUEST_URI'] = '' ;
 $_SERVER['QUERY_STRING'] = '' ;
 
-
-$_REQUEST['mod'] = $GLOBALS["argv"]["1"] ;
-$_REQUEST['action'] = $GLOBALS["argv"]["2"] ;
+//$GLOBALS["argv"]["1"];      
+$_REQUEST['mod'] = $GLOBALS["argv"]["1"];
+$_REQUEST['action'] = $GLOBALS["argv"]["2"];
 
 require_once(Lib.'/Core/App.php');                    //载入装配器
 $app = new App();                                      //实例化一个对象
@@ -28,5 +28,5 @@ $app->init();															//初始化框架
 require_once(App."/Util/actionMiddleware.php");
 require_once(App."/Util/modelMiddleware.php");
 $app->execute();
-$app = null;                                           //销毁对象
+$app = null;                                             //销毁对象
 ?>
