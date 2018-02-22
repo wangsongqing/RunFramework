@@ -352,6 +352,7 @@ function httpRequest($url, $postFields = null, $referer = null, $timeOut = 10)
         'Accept-Charset: GB2312,utf-8',
         'Accept-Language: zh-cn,zh',
         'Connection: close',
+        'CLIENT-IP:'.  getIp(),
     ));
     $response = curl_exec($ch);
     return $response;
