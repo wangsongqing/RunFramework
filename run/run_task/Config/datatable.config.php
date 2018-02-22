@@ -18,6 +18,11 @@ $configDir = $configRoot.'/dbconfig/';
 /*manage开始*/
 $tbl['manage_user'] = array(
     'name'       => $prefix.'manage_user',
-    'dbId'       => 'manage_user',
+    'dbId'       => 'run_user',
+    'configFile' => $configDir.'run_user.php',
+);
+$tbl['manage_log'] = array(
+    'name'       => $prefix.'manage_log',
+    'dbId'       => 'run_user',
     'configFile' => $configDir.'run_user.php',
 );
