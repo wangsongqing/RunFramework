@@ -20,7 +20,15 @@ class actionMiddleware extends Action {
         $this->models = actionModels();
         SystemParams::set('OB', $this);
     }
-
+    
+    /**
+     *需要页面静态化的方法在这里配置
+     * @var array 
+     */
+    public $caches = array(
+       'pagestatic'=>array('index'),
+    );
+    
     /**
      * 获取当前操作Model
      */
@@ -77,7 +85,7 @@ class actionMiddleware extends Action {
 
         $mod = getModule();
         $action = getAction();
-
+        $this->mod = $mod;
         //获取用户登录信息
         if (loginCheck()) {
             $this->login_user = getAuth('all');
