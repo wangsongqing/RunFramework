@@ -14,7 +14,7 @@ function actionModels(){
 	require $file;
 	$_arr = array();
 	foreach($tbl as $key=>$val){
-	    $_arr[$key] = $key;
+	    $_arr[$key] = '../api/Model/'.$key;
 	}
 	return $_arr;
     }
