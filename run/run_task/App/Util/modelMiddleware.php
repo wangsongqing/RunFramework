@@ -197,6 +197,7 @@ class modelMiddleware extends Model {
      * @access public
      */
     public function execate($sql) {
+        $table = $this->getTable($this->tableKey);
         return $this->db->query($sql);
     }
 
