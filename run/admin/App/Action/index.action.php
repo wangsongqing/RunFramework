@@ -112,6 +112,14 @@ class IndexAction extends actionMiddleware
     }
     
     /**
+     * 调用Api类对象
+     */
+    public function get_ob_api(){
+        $data = getObApi('user')->getUser();
+        var_dump($data);
+    }
+    
+    /**
      * 上传excel并读取里面的内容，然后插入数据库，我测试的excel后缀是 .xls
      * 数据存入run_impot数据库里面的run_import_user表  在这里就涉及到一个项目多个数据库的问题
      */
