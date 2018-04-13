@@ -17,8 +17,9 @@ class actionMiddleware extends Action {
     public $models = array();
 
     public function __construct() {
+        require_once '../api/OB/ob.class.php';
         $this->models = actionModels();
-        SystemParams::set('OB', $this);
+        OB::set('OB', $this);
     }
     
     /**
