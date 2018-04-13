@@ -21,8 +21,9 @@ class actionMiddleware extends Action {
      * @access public
      */
     public function actionMiddleware() {
+        require_once '../api/OB/ob.class.php';
         $this->models = actionModels();
-        SystemParams::set('OB', $this);
+        OB::set('OB', $this);
     }
 
     protected final function getModel() {
