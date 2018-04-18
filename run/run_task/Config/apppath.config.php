@@ -1,7 +1,7 @@
 <?php
 define('Debug', 0);                                    //调试信息(0、1、2)
 define('IsRewrite', false);                             //是否url重写
-define('IsCached', true);                              //是否缓存对象资源
+define('IsCached', false);                              //是否缓存对象资源
 define('Lib', '../RunFramework');                   //框架路径
 define('Root', '/');                            //当前应用程序运行路径
 define('DataRoot', 'Resource');                        //数据存放根目录 
