@@ -93,7 +93,7 @@ function getCacheObj()
         $cache->prefix = 'run_';
         $cache->expire = 18000;
         $cache->compressed = true;
-        $cache->configFile = 'Config/memcache.config.php';
+        $cache->configFile = '../Config/memcache.config.php';
     }
     return $cache;
 }
