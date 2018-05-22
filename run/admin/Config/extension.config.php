@@ -79,7 +79,7 @@ $objects[] = array(
 'className' => 'TableManager',
 'initMethod' => 'load',
 'property'   => array(
-	'configFile' => 'Config/datatable.config.php'
+	'configFile' => '../Config/datatable.config.php'
 ));
 
 //Memcache
@@ -92,7 +92,7 @@ $objects[] = array(
     'property'  => array(
         'expire'     => 1800,
         'compressed' => true,
-        'configFile' =>'Config/memcache.config.php'
+        'configFile' =>'../Config/memcache.config.php'
     ));
 
 
@@ -106,7 +106,7 @@ $objects[] = array(
     'property'  => array(
         'expire'     => 360000,
         'compressed' => true,
-        'configFile' => 'memcache.config.php'
+        'configFile' => '../Config/memcache.config.php'
     ));
 
 //Redis队列接口
@@ -117,6 +117,6 @@ $objects[] = array(
     'className' => 'RedisQ',
     'import'    => array(Lib.'/Util/IQueue.php'),
     'property'  => array(
-        'configFile' => 'redis.config.php'
+        'configFile' => '../Config/redis.config.php'
     ));
 ?>
