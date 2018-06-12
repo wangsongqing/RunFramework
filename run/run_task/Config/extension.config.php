@@ -35,18 +35,6 @@ $objects[] = array(
 ));
 
 
-//普通文件上传
-$objects[] = array(
-'id'         => 'upload',
-'enable'     => true,
-'source'     => Lib.'/Util/UploadFile.php',
-'className'  => 'UploadFile',
-'property'   => array(
-	'maxSize' => 1073741824,
-	'path'    => '/upload',
-	'upType'  => 'docx|rar|zip|txt|xls|xlsx|jpg|gif|png',
-));
-
 //数据分页
 $objects[] = array(
 'id'        => 'pager',
@@ -55,21 +43,7 @@ $objects[] = array(
 'className' => 'Page'
 );
 
-//参数验证
-$objects[] = array(
-'id'        => 'para',
-'enable'    => true,
-'source'    => Lib.'/Util/Parameter.php',
-'className' => 'Parameter'
-);
 
-//验证码
-$objects[] = array(
-'id'        => 'vi',
-'enable'    => true,
-'source'    => Lib.'/Util/VerifyImg.php',
-'className' => 'VerifyImg'
-);
 
 //表管理器
 $objects[] = array(
@@ -79,7 +53,7 @@ $objects[] = array(
 'className' => 'TableManager',
 'initMethod' => 'load',
 'property'   => array(
-	'configFile' => 'Config/datatable.config.php'
+	'configFile' => '../Config/datatable.config.php'
 ));
 
 //Memcache
@@ -92,22 +66,9 @@ $objects[] = array(
     'property'  => array(
         'expire'     => 1800,
         'compressed' => true,
-        'configFile' =>'Config/memcache.config.php'
+        'configFile' =>'../Config/memcache.config.php'
     ));
 
-
-//Memcache  session
-$objects[] = array(
-    'id'        => 'sess',
-    'enable'    => true,
-    'source'    => Lib.'/Util/MmCache.php',
-    'className' => 'MmCache',
-    'import'    => array(Lib.'/Util/ICache.php'),
-    'property'  => array(
-        'expire'     => 360000,
-        'compressed' => true,
-        'configFile' => 'memcache.config.php'
-    ));
 
 //Redis队列接口
 $objects[] = array(
@@ -117,6 +78,6 @@ $objects[] = array(
     'className' => 'RedisQ',
     'import'    => array(Lib.'/Util/IQueue.php'),
     'property'  => array(
-        'configFile' => 'redis.config.php'
+        'configFile' => '../Config/redis.config.php'
     ));
 ?>
