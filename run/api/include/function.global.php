@@ -27,7 +27,7 @@ function actionModels(){
  */
 function M($action=''){
     if(empty($action)){return false;}
-    $model = OB::getDB($action);
+    $model = Run::Model($action);
     return $model;
 }
 
@@ -38,7 +38,7 @@ function M($action=''){
  */
 function getObApi($class){
     if(empty($class)){return false;}
-    $OB = OB::getObApi($class);
+    $OB = Run::getObApi($class);
     return $OB;
 }
 
