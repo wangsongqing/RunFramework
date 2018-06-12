@@ -12,7 +12,7 @@ function R($key=''){
     if ($cache == null)
     {
         $cache = new RedisCrud($key);
-        $cache->configFile = 'Config/redis.config.php';
+        $cache->configFile = '../Config/redis.config.php';
     }
     return $cache;
 }
